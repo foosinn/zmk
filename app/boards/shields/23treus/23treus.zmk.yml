@@ -1,0 +1,8 @@
+file_format: "1"
+id: 23treus
+name: 23treus
+type: shield
+url: github.com/foosinn/23treus
+requires: [pro_micro]
+features:
+  - keys

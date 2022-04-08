@@ -1,0 +1,5 @@
+if SHIELD_23TREUS
+
+config ZMK_KEYBOARD_NAME
+    default "23treus"
+endif
