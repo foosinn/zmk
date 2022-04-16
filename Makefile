@@ -17,6 +17,7 @@ update:
 
 build:
 	${DOCKERCMD} exec -w ${PWD}/app zmk west build -b nice_nano_v2 -- -DSHIELD=23treus
+	cp app/build/zephyr/zmk.uf2 /run/media/stefan/NICENANO/
 
 
 down:
