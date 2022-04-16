@@ -4,9 +4,10 @@ DOCKERCMD := sudo -g docker docker
 
 all: build
 
-up: .west update
-	${DOCKERCMD} run -itd --name zmk -u $(UID) -v ${PWD}:${PWD} -w ${PWD} -e HOME=/tmp ${IMAGE} sleep infinity
+up: start .west update
 
+start:
+	${DOCKERCMD} run -itd --name zmk -u $(UID) -v ${PWD}:${PWD} -w ${PWD} -e HOME=/tmp ${IMAGE} sleep infinity
 
 .west:
 	${DOCKERCMD} exec zmk west init || true
