@@ -11,9 +11,11 @@ start:
 
 .west:
 	${DOCKERCMD} exec zmk west init || true
+	${DOCKERCMD} exec zmk west init -m https://github.com/zephyrproject-rtos/zephyr --mr v3.0.0 zephyrproject || true
 
 update:
-	${DOCKERCMD} exec -w ${PWD}/app zmk west update
+	#${DOCKERCMD} exec -w ${PWD}/app zmk west update
+	true
 
 build:
 	${DOCKERCMD} exec -w ${PWD}/app zmk west build -b nice_nano_v2 -- -DSHIELD=23treus
