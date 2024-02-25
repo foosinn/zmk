@@ -1,5 +1,5 @@
 UID := $(shell id -u)
-IMAGE := zmkfirmware/zmk-build-arm:3.0
+IMAGE := zmkfirmware/zmk-build-arm:3.5
 DOCKERCMD := sudo -g docker docker
 
 all: build
@@ -7,14 +7,14 @@ all: build
 up: start .west update
 
 start:
-	${DOCKERCMD} run -itd --name zmk -u $(UID) -v ${PWD}:${PWD} -w ${PWD} -e HOME=/tmp ${IMAGE} sleep infinity
+	${DOCKERCMD} run -itd --network=host --name zmk -u $(UID) -v ${PWD}:${PWD} -w ${PWD} -e HOME=/tmp ${IMAGE} sleep infinity
 
 .west:
 	${DOCKERCMD} exec zmk west init || true
 	${DOCKERCMD} exec zmk west init -m https://github.com/zephyrproject-rtos/zephyr --mr v3.0.0 zephyrproject || true
 
 update:
-	#${DOCKERCMD} exec -w ${PWD}/app zmk west update
+	${DOCKERCMD} exec -w ${PWD}/app zmk west update
 	true
 
 build:
