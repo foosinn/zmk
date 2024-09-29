@@ -4,7 +4,10 @@ DOCKERCMD := sudo -g docker docker
 
 all: build
 
-up: start .west update
+up: down start .west update
+
+down:
+	${DOCKERCMD} rm -f zmk
 
 start:
 	${DOCKERCMD} run -itd --network=host --name zmk -u $(UID) -v ${PWD}:${PWD} -w ${PWD} -e HOME=/tmp ${IMAGE} sleep infinity
