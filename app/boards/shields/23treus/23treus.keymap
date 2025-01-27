@@ -69,9 +69,9 @@
 
         func_layer {
             bindings = <
-            &none   &kp F7  &kp F8  &kp F9  &kp F12                   &kp HOME  &kp PG_DN  &kp PG_UP  &kp END          &none
-            &none   &kp F4  &kp F5  &kp F6  &kp F11                   &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT        &none
-            &none   &kp F1  &kp F2  &kp F3  &kp F10                   &kp INS   &kp PSCRN  &none      &kp PAUSE_BREAK  &none
+            BT0     &kp F7  &kp F8  &kp F9  &kp F12                   &kp HOME  &kp PG_DN  &kp PG_UP  &kp END          &none
+            BT1     &kp F4  &kp F5  &kp F6  &kp F11                   &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT        &none
+            BT2     &kp F1  &kp F2  &kp F3  &kp F10                   &kp INS   &kp PSCRN  &none      &kp PAUSE_BREAK  &bt BT_CLR_ALL
             &trans  &trans  &trans  &trans  &kp BSPC  &trans  &trans  &trans    &trans     &kp TAB    &kp DEL          &trans
             >;
         };
