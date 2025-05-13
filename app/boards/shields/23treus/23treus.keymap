@@ -46,6 +46,29 @@
         };
     };
 
+    macros {
+        ae: ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PAUSE_BREAK &kp DQT &kp A>;
+        };
+        oe: oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PAUSE_BREAK &kp DQT &kp O>;
+        };
+        ue: ue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PAUSE_BREAK &kp DQT &kp U>;
+        };
+        sz: sz {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PAUSE_BREAK &kp S &kp S>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -78,8 +101,8 @@
 
         blue_layer {
             bindings = <
-            &none &none &none &none &none             &bootloader &none &none &none &none
-            &none &none &none &none &none             BT0         BT1   BT2   BT3   BT4
+            &none &none &none &none &none             &bootloader &ue   &none &oe   &none
+            &ae   &sz   &none &none &none             BT0         BT1   BT2   BT3   BT4
             &none &none &none &none &none             &none       &none &none &none &none
             &none &none &none &none &none &none &none &none       &none &none &none &bt BT_CLR
             >;

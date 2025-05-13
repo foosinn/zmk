@@ -13,8 +13,7 @@ start:
 	${DOCKERCMD} run -itd --network=host --name zmk -u $(UID) -v ${PWD}:${PWD} -w ${PWD} -e HOME=/tmp ${IMAGE} sleep infinity
 
 .west:
-	${DOCKERCMD} exec zmk west init || true
-	${DOCKERCMD} exec zmk west init -m https://github.com/zephyrproject-rtos/zephyr --mr v3.0.0 zephyrproject || true
+	${DOCKERCMD} exec zmk west init -l app || true
 
 update:
 	${DOCKERCMD} exec -w ${PWD}/app zmk west update
