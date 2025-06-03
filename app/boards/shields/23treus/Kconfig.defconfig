@@ -2,4 +2,11 @@ if SHIELD_23TREUS
 
 config ZMK_KEYBOARD_NAME
     default "23treus"
+
+config ZMK_POINTING
+    default y
+
+config I2C
+    default y
+
 endif

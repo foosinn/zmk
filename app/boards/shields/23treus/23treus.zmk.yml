@@ -6,3 +6,4 @@ url: github.com/foosinn/23treus
 requires: [pro_micro]
 features:
   - keys
+  - pointer
