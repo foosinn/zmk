@@ -36,13 +36,13 @@
 
     behaviors {
         hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+	    compatible = "zmk,behavior-hold-tap";
+	    label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            bindings = <&sl>, <&kp>;
+	    flavor = "tap-preferred";
+	    tapping-term-ms = <200>;
+	    quick-tap-ms = <0>;
+	    bindings = <&sl>, <&kp>;
         };
     };
 
