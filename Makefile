@@ -29,6 +29,10 @@ build:
 	until ls -d /run/media/stefan/NICENANO/; do sleep 1; done
 	cp app/build/zephyr/zmk.uf2 /run/media/stefan/NICENANO/
 
+build2040:
+	${DOCKERCMD} exec -w ${PWD}/app zmk west build -b sparkfun_pro_micro_rp2040 -S zmk-usb-logging -- -DSHIELD=23treus
+	until ls -d /run/media/stefan/RPI-RP2/; do sleep 1; done
+	cp app/build/zephyr/zmk.uf2 /run/media/stefan/RPI-RP2/
 
 down:
 	${DOCKERCMD} rm -f zmk
